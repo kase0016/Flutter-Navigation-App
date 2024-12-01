@@ -20,7 +20,10 @@ class ContactPage extends StatelessWidget {
                         style: TextStyle(fontSize: 45, height: 1)),
                     TextFormField(
                         keyboardType: TextInputType.text,
+                        textInputAction: TextInputAction.next,
                         decoration: const InputDecoration(
+                          icon: Icon(Icons.person),
+                          hintText: 'Enter your full name ',
                           labelText: 'Name',
                         ),
                         validator: (String? value) {
@@ -33,7 +36,11 @@ class ContactPage extends StatelessWidget {
                           _data.name = value!;
                         }),
                     TextFormField(
+                        textInputAction: TextInputAction.next,
+                        keyboardType: TextInputType.text,
                         decoration: const InputDecoration(
+                          icon: Icon(Icons.mail),
+                          hintText: 'Enter your email address',
                           labelText: 'Email',
                         ),
                         validator: (String? value) {
@@ -46,7 +53,13 @@ class ContactPage extends StatelessWidget {
                           _data.email = value!;
                         }),
                     TextFormField(
+                        maxLines: 5,
+                        textInputAction: TextInputAction.next,
+                        keyboardType: TextInputType.text,
                         decoration: const InputDecoration(
+                          icon: Icon(Icons.message),
+                          hintText: 'Enter additional details',
+                          border: OutlineInputBorder(),
                           labelText: 'Message',
                         ),
                         validator: (String? value) {
